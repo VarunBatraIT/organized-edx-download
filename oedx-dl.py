@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+# @author Varun Batra 
+# @link VarunBatra.com
 # python 2/3 compatibility imports
 from __future__ import print_function
 from __future__ import unicode_literals
