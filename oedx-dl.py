@@ -365,7 +365,7 @@ def main():
             for link in week[1]:
                 week_with_links[week[0].strip()].append(link)
     else:
-        week_with_links[week[0].strip()] = weeks[w_number - 1][1]
+        week_with_links[weeks[w_number - 1][0].strip()] = weeks[w_number - 1][1]
 
     if is_interactive:
         args.subtitles = input('Download subtitles (y/n)? ').lower() == 'y'
