@@ -1,6 +1,6 @@
 organized edx download
 ======================
-##Organized Videos within separate Week Directories
+##Organizes Videos within separate Per Week Directories
 It is interactive edx downloader script, mainly written for downloading courses details and arranging them within folders with week names. Easier to keep track with ;)
 
 ###Resumable Downloads
