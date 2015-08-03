@@ -301,18 +301,21 @@ def main():
     # Get user info/courses
     dash = get_page_contents(DASHBOARD, headers)
     soup = BeautifulSoup(dash)
-    data = soup.find_all('ul')[1]
+    data = soup.find_all('ul')[0]
     USERNAME = data.find_all('span')[1].string
     COURSES = soup.find_all('article', 'course')
     courses = []
     for COURSE in COURSES:
+	is_archived = 'Finished'
+	if (COURSE.text.find('View Archived Course') == -1):
+            is_archived = ''
         c_name = COURSE.h3.text.strip()
         c_link = BASE_URL + COURSE.a['href']
         if c_link.endswith('info') or c_link.endswith('info/'):
             state = 'Started'
         else:
             state = 'Not yet'
-        courses.append((c_name, c_link, state))
+        courses.append((c_name, c_link, state, is_archived))
     numOfCourses = len(courses)
 
     # Welcome and Choose Course
@@ -323,7 +326,7 @@ def main():
     c = 0
     for course in courses:
         c += 1
-        print('%d - %s -> %s' % (c, course[0], course[2]))
+        print('%d - %s -> %s' % (c, course[0], (course[2] if (course[3] == '') else course[3]) ))
 
     c_number = int(input('Enter Course Number: '))
     while c_number > numOfCourses or courses[c_number - 1][2] != 'Started':
