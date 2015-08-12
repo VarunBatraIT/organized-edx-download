@@ -1,3 +1,6 @@
+Deprecated
+Please use https://github.com/coursera-dl/edx-dl since they have solved week with folder problem. I might update it in future but right now just too busy.
+
 organized edx download
 ======================
 ##Organizes Videos within separate Per Week Directories
